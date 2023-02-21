@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * _islower - checks if argument is lowercase
+ *@input: int
  *
  * Return: 1 if argument is lowercase
  * otherwise, 0
