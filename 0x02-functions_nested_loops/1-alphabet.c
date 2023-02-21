@@ -4,7 +4,7 @@
  *
  * Return: void
  */
-void print_alphabet()
+void print_alphabet(void)
 {
 	char first_alphabet = 'a';
 
@@ -13,4 +13,4 @@ void print_alphabet()
 		_putchar(first_alphabet);
 	}
 	_putchar('\n');
-}	
+}
