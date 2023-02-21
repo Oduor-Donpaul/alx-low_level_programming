@@ -1,6 +1,7 @@
 #include "main.h"
 /**
- * print-sign - takes input of type int
+ * print_sign - takes input of type int
+ *@input: int
  *
  * Return: 1 and print + if input is greater than zero
  * 0 and prints 0 if input is zero
@@ -8,13 +9,13 @@
  */
 int print_sign(int input)
 {
-        if (input > 0)
-        {
-                _putchar('+');
-                return (0);
-        } else if (input == 0)
-        {
-                _putchar('0');
+	if (input > 0)
+	 {
+		_putchar('+');
+		return (1);
+	} else if (input == 0)
+	{
+		_putchar('0');
 		return (0);
 	} else
 	{
