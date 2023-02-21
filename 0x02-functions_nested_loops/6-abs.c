@@ -11,7 +11,7 @@ int _abs(int input)
 	if (input < 1)
 	{
 		input *= -1;
-		return (inpu)t;
+		return (input);
 	} else if (input == 0)
 	{
 		return (0);
