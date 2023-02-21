@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * -abs - takes int
+ * _abs - takes int
+ *@input: int
  *
  *  Return: absolute value of the input
  */
@@ -10,12 +11,10 @@ int _abs(int input)
 	if (input < 1)
 	{
 		input *= -1;
-		return input;
+		return (inpu)t;
 	} else if (input == 0)
 	{
-		return 0;
-	} else
-	{
-		return input;
+		return (0);
 	}
+	return input;
 }
