@@ -10,16 +10,13 @@
 int print_sign(int input)
 {
 	if (input > 0)
-	 {
+	{
 		_putchar('+');
 		return (1);
 	} else if (input == 0)
 	{
 		_putchar('0');
 		return (0);
-	} else
-	{
-		_putchar('-');
-		return (-1);
 	}
+	return (-1);
 }
