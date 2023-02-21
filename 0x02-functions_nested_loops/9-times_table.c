@@ -5,7 +5,7 @@
  * Return: void
  */
 void times_table(void)
-{       
+{
 	int i, j, product;
 
 
@@ -25,7 +25,7 @@ void times_table(void)
 				_putchar(product + '0');
 			}
 
-			if (j !=9)
+			if (j < 9)
 			{
 				_putchar(',');
 				_putchar(' ');
