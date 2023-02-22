@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - entry 
+ * main - entry
  *
  * Return: Always 0 (success)
  */
@@ -13,7 +13,7 @@ int main(void)
 		if (num == 1)
 		{
 			printf("%d", num_one);
-		} else if ( num == 2)
+		} else if (num == 2)
 		{
 			printf(", %d", num_two);
 		} else
@@ -22,6 +22,8 @@ int main(void)
 
 			 printf(", %d", num_next);
 		}
+		num_one = num_two;
+		num_two = num_next;
 		num++;
 	}
 	printf("\n");
