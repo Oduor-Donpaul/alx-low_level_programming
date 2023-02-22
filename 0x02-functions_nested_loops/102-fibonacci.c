@@ -10,10 +10,10 @@ int main(void)
 
 	while (num <= 50)
 	{
-		if (num = 1)
+		if (num == 1)
 		{
 			printf("%d", num_one);
-		} else if ( num = 2)
+		} else if ( num == 2)
 		{
 			printf(", %d", num_two);
 		} else
