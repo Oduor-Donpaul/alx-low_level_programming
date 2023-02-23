@@ -1,8 +1,8 @@
 #include <unistd.h>
 /**
  * _putchar - input (char)
- *
- * Return: int 
+ *@c: char
+ * Return: int
  */
 int _putchar(char c);
 
@@ -22,38 +22,38 @@ void print_alphabet_x10(void);
 
 /**
  * _islower - input (int)
- *
+ *@c: int
  * Return: int
  */
 int _islower(int c);
 
 /**
  * _isalpha - input (int)
- *
+ *@c: int
  * Return: int
  */
 int _isalpha(int c);
 
 /**
  * print_sign - input (int)
- *
+ *@n: int
  * Return: int
  */
 int print_sign(int n);
 
 /**
- * -abs - input (int)
- *
+ * _abs - input (int)
+ *@n: int
  *  Return: int
  */
-int _abs(int);
+int _abs(int n);
 
 /**
  * print_last_digit - input (int)
- *
+ *@n: int
  * Return: int
  */
-int print_last_digit(int);
+int print_last_digit(int n);
 
 /**
  * jack_bauer - input (void)
@@ -71,28 +71,29 @@ void times_table(void);
 
 /**
  * add - input (int, int)
- *
+ *@c: int
+ *@i: int
  * Return: int
  */
-int add(int, int);
+int add(int c, int i);
 
 /**
  * print-to_98 - input (int)
- *
+ *@n: int
  * Return: void
  */
 void print_to_98(int n);
 
 /**
  * print_times - input (int)
- *
+ *@n: int
  * Return: void
  */
 void print_times_table(int n);
 
 /**
  * _isupper - input(int)
- *
+ *@c: int
  * Return: int
  */
 int _isupper(int c);
