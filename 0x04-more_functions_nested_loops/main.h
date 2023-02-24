@@ -97,3 +97,81 @@ void print_times_table(int n);
  * Return: int
  */
 int _isupper(int c);
+
+/**
+ * _isdigit - checks if is digit
+ * @c: int
+ *
+ * Return: int
+ */
+int _isdigit(int c);
+
+/**
+ * mul - multiplies two ints
+ * @a: int
+ * @b: int
+ * Return: int
+ */
+int mul(int a, int b);
+
+/**
+ * main - prints numbers
+ *
+ * Return: void
+ */
+void print_numbers(void);
+
+/**
+ * print_most_numbers prints numbers
+ *
+ * Return: void
+ */
+void print_most_numbers(void);
+
+/**
+ * more_numbers  - prints 10 times the number from 0 to 14 
+ *
+ * Return: void
+ */
+void more_numbers(void);
+
+/**
+ * print_line - draws a straight line
+ * @n:  int
+ *
+ *Return: void
+ */
+void print_line(int n);
+
+/**
+ * print_diagonal - prints diagonal line
+ * @n: int
+ *
+ * Return: void
+ */
+void print_diagonal(int n);
+
+/**
+ * print_square  - prints square
+ *
+ * @size: int
+ *
+ * Return: void
+ */
+void print_square(int size);
+
+/**
+ * print_triangle
+ * @size: int
+ *
+ * Return: void
+ */
+void print_triangle(int size);
+
+/**
+ * print_number prints an intager
+ *
+ * @n: int
+ * Return: void
+ */
+void print_number(int n);
