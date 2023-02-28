@@ -15,14 +15,14 @@ void puts_half(char *str)
 	{
 		i++;
 	}
-	len = i ;
+	len = i;
 
 	half = len / 2;
 
 	while (str[half])
 	{
 
-		_putchar(str[half]);
+		_putchar(str[half + 1]);
 		half++;
 	}
 
