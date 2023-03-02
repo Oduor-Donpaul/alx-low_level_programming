@@ -7,8 +7,7 @@
  */
 char *leet(char *str)
 {
-	int i = 0, j = 0;
-	int len = 0;
+	int i = 0;
 
 	while (str[i])
 		i++;
