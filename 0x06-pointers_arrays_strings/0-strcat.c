@@ -14,10 +14,9 @@ char *_strcat(char *dest, char *src)
 	{
 		if (dest[-1])
 		{
-			dest += src[0];
+			dest = src[0];
 		}
 		dest += src[i + 1];
 	}
-	dest[-1] = '\0';
 	return (dest);
 }
