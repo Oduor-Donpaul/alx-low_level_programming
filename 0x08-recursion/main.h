@@ -6,6 +6,8 @@ int factorial(int n);
 int _pow_recursion(int x, int y);
 int _sqrt_recursion(int n);
 int _sqrt_helper(int num, int root);
+int is_prime_number(int n);
+int is_divisible(int num, int div);
 int _putchar(char c);
 void _puts_recursion(char *s);
 #endif
