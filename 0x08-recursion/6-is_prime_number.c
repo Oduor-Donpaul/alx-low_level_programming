@@ -5,7 +5,7 @@
  * @div: The divisor.
  *
  * Return: 0 If the number is divisible 
- *         -1 If the number is not divisible .
+ * -1 If the number is not divisible .
  */
 int is_divisible(int num, int div)
 {
