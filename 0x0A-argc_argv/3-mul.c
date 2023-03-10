@@ -8,7 +8,7 @@
  * Return: 1 if argc == 2
  * 0 otherwisw
  */
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
 	int i, result;
 
