@@ -2,7 +2,7 @@
 #include <stdlib.h>
 /**
  * _strdup - copies a string given as aparameter
- * @srt: string to be copied
+ * @str: string to be copied
  *
  * Return: NULL if srt is NULL
  * On successs a pointer to the duplicate string
@@ -23,9 +23,9 @@ char *_strdup(char *str)
 		j++;
 	}
 
-	ptr = (char *)malloc(sizeof(char) * j);
+	ptr = (char *)malloc(sizeof(char) * (j + 1));
 
-	for (i = 0; i <= j; i++)
+	for (i = 0; i < j; i++)
 	{
 		ptr[i] = str[i];
 	}
