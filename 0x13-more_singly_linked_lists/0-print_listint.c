@@ -4,8 +4,9 @@
 
 /**
  * print_listint - prints all elements of listint_t
- * @*h: pointer to the header of a limked lists
- *
+ * @h: pointer to the header of a limked lists
+ * Description: takes a pointer to head of a linked list and prints
+ * elements of the linked list
  * Return: number of nodes
  */
 size_t print_listint(const listint_t *h)
