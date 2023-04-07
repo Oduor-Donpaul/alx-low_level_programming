@@ -11,8 +11,6 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	int i;
 
 	bits = m ^ n;
-	if (bits == 0)
-		return (-1);
 	for (i = 0; i < 64; i++)
 	{
 		counter += bits & 1;
