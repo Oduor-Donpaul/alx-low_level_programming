@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#define BUFF_SIZE 1024
 /**
  * main - copies content from file 1 to file 2
  * @ac: argument count
@@ -11,8 +12,8 @@
  */
 int main(int ac, char **av)
 {
-	int fd, fd_to, fd_close, fd_close_1;
-	char buf[1024];
+	char buf[BUFF_SIZE];
+	int fd, fd_to;
 	ssize_t buf_read, buf_write;
 
 	if (ac != 3)
@@ -33,10 +34,10 @@ int main(int ac, char **av)
 		close(fd);
 		exit(99);
 	}
-	while ((buf_read = read(fd, buf, 1024)) > 0)
+	while ((buf_read = read(fd, buf, BUFF_SIZE)) > 0)
 	{
 		buf_write = write(fd_to, buf, buf_read);
-		if (buf_write == -1 || buf_wrte != buf_read)
+		if (buf_write == -1 || buf_write != buf_read)
 		{
 			dprintf(2, "Error: Can't write to %s\n", av[2]);
 			close(fd);
