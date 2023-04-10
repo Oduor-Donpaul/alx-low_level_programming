@@ -1,59 +1,45 @@
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/stat.h>
 #include "main.h"
+#include <sys/types.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stddef.h>
+#include <unistd.h>
+#include <fcntl.h>
 
-/**
- * read_textfile - reaads a file
- * @filename: name
- * @letters: letters
- * Return: ssize_t
- */
-
-ssize_t read_textfile(const char *filename, size_t letters)
+size_t read_textfile(const char *filename, size_t letters)
 {
-        FILE *ptr;
-        size_t i;
+   int fd;
+   int n;
+   char *buffer;
 
-        char *ch = 0;
-        ssize_t j;
+   if (filename == NULL)
+           return (0);
 
-        ptr = fopen(filename, O_RDONLY);
+   fd = open(filename, O_RDONLY);
 
-        if (ptr == NULL)
-                return 0;
+   if (fd == -1)
+           return (0);
 
-        ch = malloc(sizeof(char) * (letters + 1));
+   buffer = malloc(sizeof(char) * (letters + 1));
 
-        if (ch == NULL)
-        {
-                fclose(ptr);
-                return (0);
-        }
+   if (buffer == NULL)
+   {
+           close(fd);
+           return (0);
+   }
 
-        i = fread(ch, 1, letters, ptr);
+   n = read(fd, buffer, letters);
 
-        if (i == 0 && !feof(ptr))
-        {
-                free(ch);
-                fclose(ptr);
-                return (0);
-        }
+   if (n == -1)
+   {
+           free(buffer);
+           close(fd);
+           return (0);
+   }
 
-        j = write(STDOUT_FILENO, ch, i);
+   write(STDOUT_FILENO, buffer, n);
 
-        if (j == -1 || j != i)
-        {
-                free(ch);
-                fclose(ptr);
-                return (0);
-        }
-
-        free(ch);
-        fclose(ptr);
-
-        return (i);
+   free(buffer);
+   close(fd);
+   return (n);
 }
-
