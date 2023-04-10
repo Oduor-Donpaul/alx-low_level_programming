@@ -15,14 +15,14 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: %s %s\n", av[1], av[2]);
+		dprintf(2, "Usage: file_fro file_to\n");
 		exit (97);
-	et
+	}
 	fd = open(av[1], O_RDONLY);
 
 	if (fd == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", av[2]);
+		dprintf(2, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 
