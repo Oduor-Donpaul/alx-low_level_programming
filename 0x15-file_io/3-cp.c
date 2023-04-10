@@ -20,7 +20,7 @@ int main(int ac, char **av)
 	{
 
 		dprintf(2, "Usage: file_fro file_to\n");
-		exit (97
+		exit (97);
 
 		dprintf(2, "Usage: cp file_from file_to");
 		exit(97);
