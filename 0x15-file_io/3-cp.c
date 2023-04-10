@@ -43,23 +43,14 @@ int main(int ac, char **av)
 	if (ac != 3)
 	{
 
-		dprintf(2, "Usage: cp file_from file_to");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to");
 		exit(97);
 
 	}
 	fd = open(av[1], O_RDONLY);
-	if (fd == -1)
-	{
-		dprintf(2, "Error: Can't read from file %s\n", av[1]);
-		exit(98);
-	}
-	fd_to = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (fd_to == -1)
-	{
-		dprintf(2, "Error: Can't write to %s\n", av[2]);
-		close(fd);
-		exit(99);
-	}
+	fd_to = open(av[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+	file_error(fd, fd_to, av);
+
 	buf_read = 1024;
 	while (buf_read == 1024)
 	{
