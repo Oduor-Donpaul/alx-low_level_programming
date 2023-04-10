@@ -17,7 +17,7 @@ int main(int ac, char **av)
 	{
 		dprintf(2, "Usage: %s %s\n", av[1], av[2]);
 		exit (97);
-	et
+	}
 	fd = open(av[1], O_RDONLY);
 
 	if (fd == -1)
