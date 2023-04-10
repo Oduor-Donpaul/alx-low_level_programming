@@ -5,7 +5,7 @@
 
 #define BUFF_SIZE 1024
 
-void file_error(int fd, int fd_to, char **av);
+void file_error(int fd, int fd_to, char *av[]);
 
 /**
  * file_error - checks error
@@ -14,7 +14,7 @@ void file_error(int fd, int fd_to, char **av);
  * @fd_to: file descriptor to
  * Return: nothing
  */
-void file_error(int fd, int fd_to, char av[])
+void file_error(int fd, int fd_to, char *av[])
 {
 	if (fd == -1)
 	{
@@ -34,7 +34,7 @@ void file_error(int fd, int fd_to, char av[])
  * @av: ARGUMENT VECTOR
  * Return: nothing
  */
-int main(int ac, char av[])
+int main(int ac, char *av[])
 {
 	char buf[BUFF_SIZE];
 	int fd, fd_to;
