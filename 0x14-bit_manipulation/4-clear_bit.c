@@ -1,4 +1,4 @@
-#nclude "main.h"
+#include "main.h"
 /**
  * clear_bit - sets the value of a bit to zero at index
  * @n: unsigned int
