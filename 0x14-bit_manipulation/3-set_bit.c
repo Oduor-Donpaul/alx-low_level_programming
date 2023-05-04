@@ -10,12 +10,11 @@
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	int bit, i = 0;
 
 	if (index >= 64)
 		return (-1);
 
-	bit = (1UL << index);
+	*n |= (1UL << index);
 
 	return (1);
 }
