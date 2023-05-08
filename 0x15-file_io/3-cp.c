@@ -51,7 +51,7 @@ int main(int ac, char *av[])
 		if (no_write == -1)
 			_error(0, -1, av);
 	}
-	if (close(fd) ==-1 || close(fd_2) == -1)
+	if (close(fd) == -1 || close(fd_2) == -1)
 	{
 		dprintf(2, "Error: Can't close fd %d", fd);
 		exit(100);
