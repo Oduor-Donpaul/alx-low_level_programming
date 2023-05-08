@@ -42,7 +42,7 @@ int main(int ac, char *av[])
 	fd = open(av[1], O_RDONLY);
 	fd_2 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	_error(fd, fd_2, av);
-	while ((no_read == read(fd, buffer, 1024)) > 0)
+	while ((no_read = read(fd, buffer, 1024)) > 0)
 	{
 		if (write(fd_2, buffer, no_read) != no_read)
 			_error(0, -1, av);
