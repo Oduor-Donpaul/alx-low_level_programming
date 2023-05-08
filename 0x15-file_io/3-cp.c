@@ -48,7 +48,9 @@ int main(int ac, char *av[])
 			_error(0, -1, av);
 	}
 	if (no_read < 0)
+	{
 		_error(-1, 0, av);
+	}
 	if (close(fd) == -1)
 	{
 		dprintf(2, "Error: Can't close fd %d\n", fd);
