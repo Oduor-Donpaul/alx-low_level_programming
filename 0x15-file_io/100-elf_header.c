@@ -12,6 +12,47 @@ void _perror(char *msg)
 }
 
 /**
+ * _type - checks type
+ * @type: type
+ * Return: pointer
+ */
+char *_type(Elf64_Half type)
+{
+	switch (type)
+	{
+	case ET_NONE: return "NONE (Unknown type)";
+	case ET_REL: return "REL (Relocatable file)";
+	case ET_EXEC: return "EXEC (Executable file)";
+	case ET_DYN: return "DYN (Shared object file)";
+	case ET_CORE: return "CORE (Core file)";
+	default: return "Unknown";
+	}
+}
+/**
+ * _osabi - gets OS/ABI name
+ * @osabi: osabi
+ * Return: pointer
+ */
+char *_osabi(unsigned char osabi)
+{
+	switch (osabi)
+	{
+	case ELFOSABI_SYSV: return "UNIX - System V";
+	case ELFOSABI_HPUX: return "UNIX - HP-UX";
+	case ELFOSABI_NETBSD: return "UNIX - NetBSD";
+	case ELFOSABI_LINUX: return "UNIX - Linux";
+	case ELFOSABI_SOLARIS: return "UNIX - Solaris";
+	case ELFOSABI_AIX: return "UNIX - AIX";
+	case ELFOSABI_IRIX: return "UNIX - IRIX";
+	case ELFOSABI_FREEBSD: return "UNIX - FreeBSD";
+	case ELFOSABI_TRU64: return "UNIX - TRU64";
+	case ELFOSABI_MODESTO: return "Novell - Modesto";
+	case ELFOSABI_OPENBSD: return "UNIX - OpenBSD";
+	default: return "Unknown";
+	}
+}
+
+/**
  * header_info - prints ELF info
  * @header: pointer to header struct
  * Return: nothing
@@ -27,16 +68,17 @@ void header_info(Elf64_Ehdr *header)
 		printf("%02x ", header->e_ident[i]);
 	}
 	printf("\n");
-	printf("  Class:		%s\n", (header->e_ident[EI_CLASS] == ELFCLASS32) ?
-				"ELF32" : "ELF64");
-	printf("  Data:			%s\n", (header->e_ident[EI_DATA] == ELFDATA2MSB) ?
-				"2's complement, big endian" : "2's complement, little endian");
-	printf("  Version:		%d%s\n", header->e_ident[EI_VERSION],
+	printf("  Class:                %s\n", (header->e_ident[EI_CLASS]
+				== ELFCLASS32) ? "ELF32" : "ELF64");
+	printf("  Data:	                %s\n", (header->e_ident[EI_DATA] ==
+				ELFDATA2MSB) ? "2's complement, big endian" :
+			"2's complement, little endian");
+	printf("  Version:              %d%s\n", header->e_ident[EI_VERSION],
 				(header->e_ident[EI_VERSION] == EV_CURRENT) ? " (current)" : "");
-	printf("  OS/ABI:		%d\n", header->e_ident[EI_OSABI]);
-	printf("  ABI Version:		%d\n", header->e_ident[EI_ABIVERSION]);
-	printf("  Type:			%d\n", header->e_type);
-	printf("  Entry point address:	%lx\n", header->e_entry);
+	printf("  OS/ABI:               %s\n", _osabi(header->e_ident[EI_OSABI]));
+	printf("  ABI Version:          %d\n", header->e_ident[EI_ABIVERSION]);
+	printf("  Type:	                %s\n", _type(header->e_type));
+	printf("  Entry point address:  0x%x\n", (int)header->e_entry);
 	printf("\n");
 }
 
