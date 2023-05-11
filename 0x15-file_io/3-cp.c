@@ -11,7 +11,7 @@ void _error(int fd, int fd_2, char *av[])
 {
 	if (fd == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: can't read from file %s\n", av[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 	if (fd_2 == -1)
